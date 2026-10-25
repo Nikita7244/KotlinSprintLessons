@@ -6,13 +6,13 @@ fun main() {
     val shirtPrice = 1200
     val shirtCount = 1
 
-    val sticPrice = 450
+    val sticPrice = 150
     val sticCount = 3
     // стоимость каждой позиции и итог заказа
     val mugTotal = mugPrice * mugCount
     val shirtTotal = shirtPrice * shirtCount
     val sticTotal = sticPrice * sticCount
-    val priceTotal = mugTotal + shirtTotal + sticTotal + sticPrice
+    val priceTotal = mugTotal + shirtTotal + sticTotal
 
     // println на каждую строку чека и на итог
     println("Кружка x$mugCount — $mugTotal руб.")
