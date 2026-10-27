@@ -4,7 +4,7 @@ fun main() {
     val priceDiscount = (price * discount) / 100
     val discountSize = price - priceDiscount
 
-    println("Цена: $price")
-    println("Со скидкой: $priceDiscount")
-    println("Экономия: $discountSize")
+    println("Цена: $price руб.")
+    println("Со скидкой: $discountSize руб.")
+    println("Экономия: $priceDiscount руб.")
 }
