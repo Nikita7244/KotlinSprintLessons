@@ -1,5 +1,6 @@
 fun main() {
-    var balance = 5200
+    val startBalance = 5200
+    var balance = startBalance
     println("Старт месяца: $balance руб.")
 
     val scholarship = 34_000
@@ -25,9 +26,11 @@ fun main() {
     println("Конец месяца: $balance руб.")
     val spendAll = rentRoom + eat + transport + books
     val spendPart = spendAll * 100 / scholarship
-    val savings = balance - 5200
+    val savings = balance - startBalance
     val avgSpend = spendAll / 30
     val avgSpendFull = spendAll.toDouble() / 30
+
+    println()
 
     println("""
         --- Аналитика месяца ---
@@ -41,6 +44,8 @@ fun main() {
     val target = 89_990
     val remains = target - balance
     val needTime = (remains + savings - 1) / savings
+
+    println()
 
     println("""
         === Цель: ноутбук за $target руб. ===
