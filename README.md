@@ -10,7 +10,7 @@
    аккаунт, имя — `KotlinSprintLessons`, видимость — **Public**.
 2. В IDE на приветственном экране: **Clone Repository**, вставьте адрес своего нового репозитория.
 3. Дождитесь, пока IDE загрузит Gradle, и откройте
-   `src/main/kotlin/Main.kt`.
+   `src/main/demoSprint`.
 4. Запустите `fun main` зелёным треугольником слева от неё. В консоли
    появится `Hello, Kotlin!` — проект работает.
 
