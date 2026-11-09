@@ -1,3 +1,5 @@
+package demosprint
+
 fun main() {
     val startBalance = 5200
     var balance = startBalance
