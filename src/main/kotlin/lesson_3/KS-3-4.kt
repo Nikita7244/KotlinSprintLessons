@@ -5,10 +5,10 @@ fun main() {
     var to: String = "E4"
     var count: Int = 0
 
-    println("$from-$to:${++count}")
+    println("$from-$to;${++count}")
 
     from = "D2"
     to = "D3"
 
-    println("$from-$to:${++count}")
+    println("$from-$to;${++count}")
 }
