@@ -8,6 +8,5 @@ fun main () {
     val canBookToday:Boolean = bookToday < ALL_TABLES
     val canBookTomorrow: Boolean = bookTomorrow < ALL_TABLES
 
-    println("Доступность столиков на сегодня: $canBookToday")
-    println("Доступность столиков на завтра: $canBookTomorrow")
+    println("Доступность столиков на сегодня: $canBookToday\nДоступность столиков на завтра: $canBookTomorrow")
 }
