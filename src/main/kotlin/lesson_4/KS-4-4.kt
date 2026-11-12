@@ -1,13 +1,16 @@
 package lesson_4
 
 fun main() {
-    val isHandsPress = true
+    val day = 5
+    val isHandsPress = (day % 4) == 1
     val isLegthBack = !isHandsPress
 
-    println("""
+    println(
+        """
         Упражнения для рук:    $isHandsPress
         Упражнения для ног:    $isLegthBack
         Упражнения для спины:  $isLegthBack
         Упражнения для пресса: $isHandsPress
-    """.trimIndent())
+    """.trimIndent()
+    )
 }
