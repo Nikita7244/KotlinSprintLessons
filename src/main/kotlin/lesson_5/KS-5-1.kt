@@ -1,11 +1,12 @@
 package lesson_5
 
-const val INTER_NUM = 7 + 456
-
 fun main() {
-    println("Проверка на бота. Введите результат выражения 7 + 456")
+
+    val summandOne = 7
+    val summandTwo = 456
+    println("Проверка на бота. Введите результат выражения $summandOne + $summandTwo")
     val inputNum = readln().toIntOrNull()
 
-    if (inputNum == INTER_NUM) println("Добро пожаловать!")
+    if (inputNum == (summandOne + summandTwo)) println("Добро пожаловать!")
     else println("Доступ запрещен.")
 }
