@@ -1,6 +1,6 @@
 package lesson_5
 
-const val INTER_NUM = 7 + 456
+const val INTER_NUM = 463
 
 fun main() {
     println("Проверка на бота. Введите результат выражения 7 + 456")
