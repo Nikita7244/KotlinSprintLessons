@@ -2,7 +2,7 @@ package lesson_4
 
 fun main() {
     val day = 5
-    val isHandsPress = (day % 4) == 1
+    val isHandsPress = (day % 2) == 1
     val isLegthBack = !isHandsPress
 
     println(
