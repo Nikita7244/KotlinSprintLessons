@@ -14,7 +14,7 @@ fun main() {
     """.trimIndent()
     )
 
-    var login = readln()
+    val login = readln()
 
     when {
         login == USER -> {
@@ -30,8 +30,7 @@ fun main() {
                     пребывание здесь больше, чем мне.
                 """.trimIndent()
                 )
-            }
-            else {
+            } else {
                 println("Пароль не верен")
             }
         }
