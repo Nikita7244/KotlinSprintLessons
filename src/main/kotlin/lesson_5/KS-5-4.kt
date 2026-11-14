@@ -31,13 +31,13 @@ fun main() {
                 """.trimIndent()
                 )
             }
+            else {
+                println("Пароль не верен")
+            }
         }
 
         else -> {
             println("Давайте Вас зарегестрируем")
-            login = readln()
-
-            println("Регистрация прошла успешна")
         }
     }
 }
