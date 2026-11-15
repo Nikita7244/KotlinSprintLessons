@@ -1,10 +1,10 @@
 package lesson_5
 
 fun main() {
-    val knownNum: List<Int> = listOf<Int>((0..42).random(), (0..42).random(), (0..42).random())
+    val knownNum: List<Int> = (0..42).shuffled().take(3)
     val inputNum: MutableList<Int> = mutableListOf<Int>()
 
-    println("угадайте три числа от 0 до 43. Удачи!")
+    println("угадайте три числа от 0 до 42. Удачи!")
     println("Введите первое число")
     inputNum.add(readln().toInt())
 
@@ -14,9 +14,9 @@ fun main() {
     println("Введите третье число")
     inputNum.add(readln().toInt())
 
-    val guessed = knownNum.intersect(inputNum.toSet())
+    val guessed = knownNum.intersect(inputNum.toSet()).size
 
-    when (guessed.size) {
+    when (guessed) {
         1 -> println("Вы угадали одно число. Получите утешительный приз.")
         2 -> println("Вы угадали два числа. Получите крупный приз.")
         3 -> println("Вы угадали все числа. Вы выиграли Джекпот!")
