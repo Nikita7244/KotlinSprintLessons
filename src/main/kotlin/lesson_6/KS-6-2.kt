@@ -10,5 +10,5 @@ fun main() {
         sec--
     }
 
-    println("Прошло секунд: $getTime")
+    println("Прошло $getTime секунд")
 }
