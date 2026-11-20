@@ -21,5 +21,5 @@ fun main() {
         }
     }
 
-    if (attempt == 0) println("Доступ запрещен")
+    if (attempt < 0) println("Доступ запрещен")
 }
