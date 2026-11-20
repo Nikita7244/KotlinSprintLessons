@@ -16,10 +16,10 @@ fun main() {
         if (result == (summandOne + summandTwo)) {
             println("Добро пожаловать!")
             break
+        } else if (attempt == 0){
+            println("Доступ запрещен")
         } else {
             println("Ошибка. Осталось попыток $attempt. Попробуй ещё раз")
         }
     }
-
-    if (attempt < 0) println("Доступ запрещен")
 }
