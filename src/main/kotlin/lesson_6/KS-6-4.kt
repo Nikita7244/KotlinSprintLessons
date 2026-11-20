@@ -13,8 +13,7 @@ fun main() {
         if (inputNum == guessedNumber) {
             println("Это была великолепная игра!")
             break
-        }
-        else{
+        } else {
             println("Неверно. Осталось число попыток ${--attempt}")
         }
     }
