@@ -12,7 +12,7 @@ fun main() {
         val num =('0'..'9').toList()
 
         while (pass.length != 4) {
-            pass += num[Random.nextInt(num.size - 1)]
+            pass += num[Random.nextInt(num.size)]
         }
 
         println("Ваш код авторизации: $pass")
