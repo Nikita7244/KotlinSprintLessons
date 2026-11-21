@@ -1,4 +1,5 @@
 package lesson_7
+import kotlin.random.Random
 
 fun main() {
 
@@ -8,10 +9,10 @@ fun main() {
         var pass = ""
 
         pass += ('1'..'9').shuffled()[0]
-        val num =('0'..'9').shuffled().take(3)
+        val num =('0'..'9').toList()
 
-        for (i in 0..2) {
-            pass += num[i]
+        while (pass.length != 4) {
+            pass += num[Random.nextInt(num.size - 1)]
         }
 
         println("Ваш код авторизации: $pass")
