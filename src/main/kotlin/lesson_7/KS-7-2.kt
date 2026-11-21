@@ -8,9 +8,10 @@ fun main() {
         var pass = ""
 
         pass += ('1'..'9').shuffled()[0]
+        val num =('0'..'9').shuffled().take(3)
 
         for (i in 0..2) {
-            pass += ('0'..'9').shuffled()[i]
+            pass += num[i]
         }
 
         println("Ваш код авторизации: $pass")
@@ -19,7 +20,7 @@ fun main() {
 
         if (inputPass == pass) isPassTrue = true
 
-    } while (isPassTrue)
+    } while (!isPassTrue)
 
     println("Добро пожаловать!")
 }
