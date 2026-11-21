@@ -1,6 +1,6 @@
 package lesson_7
 
-fun main () {
+fun main() {
 
     var isPassTrue = false
 
@@ -12,5 +12,14 @@ fun main () {
         for (i in 0..2) {
             pass += ('0'..'9').shuffled()[i]
         }
-    } while (isPassTrue != true)
+
+        println("Ваш код авторизации: $pass")
+        println("Введите код авторизации")
+        val inputPass = readln()
+
+        if (inputPass == pass) isPassTrue = true
+
+    } while (isPassTrue)
+
+    println("Добро пожаловать!")
 }
