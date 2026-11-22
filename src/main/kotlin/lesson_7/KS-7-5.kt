@@ -1,7 +1,5 @@
 package lesson_7
 
-import kotlin.random.Random
-
 const val MIN_PASSWORD_LENGTH = 6
 
 fun main() {
@@ -17,9 +15,11 @@ fun main() {
     } while (lengthPass < MIN_PASSWORD_LENGTH)
 
     var password = ""
-    for (i in 1 .. lengthPass) {
-        password += charAll[Random.nextInt(3)].random()
+    for (i in 0 until lengthPass) {
+        password += charAll[i % 3].random()
     }
+
+    password = password.toList().shuffled().joinToString("")
 
     println("Сгенерированный пароль: $password")
 }
