@@ -16,7 +16,7 @@ fun main() {
 
     var password = ""
     for (i in 0 until lengthPass) {
-        password += charAll[i % 3].random()
+        password += charAll[i % charAll.size].random()
     }
 
     password = password.toList().shuffled().joinToString("")
