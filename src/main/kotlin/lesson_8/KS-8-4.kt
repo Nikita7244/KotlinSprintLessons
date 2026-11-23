@@ -11,8 +11,9 @@ fun main() {
         println("Какой ингредиент хотите заменить?")
         inputIngredient = readln().lowercase()
 
-        if (ingredients.indexOf(inputIngredient) < 0) println("Такого ингредиента нет. Введите заново")
-    } while (!(ingredients.contains(inputIngredient)))
+        val isNotInArray = ingredients.indexOf(inputIngredient) < 0
+        if (isNotInArray) println("Такого ингредиента нет. Введите заново")
+    } while (isNotInArray)
 
     val numToChange = ingredients.indexOf(inputIngredient)
 
@@ -21,5 +22,5 @@ fun main() {
 
     ingredients[numToChange] = newIngredient
 
-    println(ingredients.joinToString(", "))
+    println("Готово! Вы сохранили следующий список: ${ingredients.joinToString(", ")}")
 }
