@@ -8,7 +8,7 @@ fun main() {
     println("Желаете добавить еще?")
     val answer = readln()
 
-    if (answer.lowercase().equals("да")) {
+    if (answer.equals("да", ignoreCase = true)) {
         println("Какой ингредиент вы хотите добавить?")
         val newIngredient = readln()
         ingredients.add(newIngredient)
