@@ -34,7 +34,7 @@ fun main() {
         val isHumanWin = checkWinHuman(humanPoint, robotPoint)
         if (isHumanWin) countWinHuman++
 
-        println("Хотите сыграть ещё раз?")
+        println("Хотите бросить кости еще раз? Введите Да или Нет")
         val answer = readln()
     } while (answer.equals("Да", true))
 
