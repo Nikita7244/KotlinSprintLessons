@@ -4,11 +4,6 @@ const val LOGIN = "Dimon"
 const val PASSWORD = "45Gh"
 const val TOKEN_LENGHT = 32
 
-fun checkUser(login: String, password: String): Boolean? {
-    if (login == LOGIN && password == PASSWORD) return true
-    else return null
-}
-
 fun generateToken(): String {
     val charList = arrayOf('a'..'z', '0'..'9', 'A'..'Z')
     var token = ""
@@ -20,19 +15,24 @@ fun generateToken(): String {
     return token.toList().shuffled().joinToString(separator = "")
 }
 
-fun getBasket(token: String): String {
+fun checkUser(login: String, password: String): String? {
+    if (login == LOGIN && password == PASSWORD) return generateToken()
+    else return null
+}
+
+fun getBasket(token: String): Array<String> {
     val basket = arrayOf("масло", "сало", "молоко")
-    return basket.joinToString(", ")
+    return basket
 }
 
 fun main() {
     val userLogin = "Dimon"
     val userPassword = "45Gh"
 
-    if (checkUser(userLogin, userPassword) == true) {
-        val token = generateToken()
+    val token = checkUser(userLogin, userPassword)
+    if (token != null) {
         val listItem = getBasket(token)
-        println("Список корзины: $listItem")
+        println("Список корзины: ${listItem.joinToString(", ")}")
     } else {
         println("Неверный логин или пароль")
     }
