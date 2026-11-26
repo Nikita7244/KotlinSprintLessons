@@ -20,8 +20,8 @@ fun checkUser(login: String, password: String): String? {
     else return null
 }
 
-fun getBasket(token: String): Array<String> {
-    val basket = arrayOf("масло", "сало", "молоко")
+fun getBasket(token: String): List<String> {
+    val basket = listOf<String>("масло", "сало", "молоко")
     return basket
 }
 
