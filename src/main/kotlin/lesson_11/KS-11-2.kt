@@ -1,6 +1,6 @@
 package lesson_11
 
-class UserData {
+class User2 {
     var id: Int = 0
     var login: String = ""
     var password: String = ""
@@ -30,7 +30,7 @@ class UserData {
 }
 
 fun main() {
-    val user1 = UserData()
+    val user1 = User2()
     user1.id = 1
     user1.login = "roma_2002"
     user1.email = "roma_2002@mail.ru"
