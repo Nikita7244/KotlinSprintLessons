@@ -48,9 +48,12 @@ class Forum(
     private val forumMessages: MutableList<ForumMessage> = mutableListOf(),
 ) {
     fun createNewUser(newUserName: String): ForumUser {
-        return ForumUser.Builder()
+        val newUser = ForumUser.Builder()
             .createUser(newUserName, forumMembers.size + 1)
             .build()
+
+        forumMembers.add(newUser)
+        return newUser
     }
 
     fun createNewMessage(userId: Int?, newMessage: String) = apply {
@@ -75,32 +78,19 @@ class Forum(
             }
         }
     }
-
-    fun getUserId(userName: String): Int? {
-        for (item in forumMembers) {
-            if (item.userName == userName) {
-                return item.userId
-            }
-        }
-        return null
-    }
-
-    fun addUserToForum(user: ForumUser) {
-        forumMembers.add(user)
-    }
 }
 
 fun main() {
     val forum = Forum()
 
-    forum.addUserToForum(forum.createNewUser(USER_P))
-    forum.addUserToForum(forum.createNewUser(USER_L))
+    val userPavel = forum.createNewUser(USER_P)
+    val userLeon = forum.createNewUser(USER_L)
 
-    forum.createNewMessage(forum.getUserId(USER_P), "Hello! My name is Pavel")
-    forum.createNewMessage(forum.getUserId(USER_L), "Hello! My name is Leon")
+    forum.createNewMessage(userPavel.userId, "Hello! My name is Pavel")
+    forum.createNewMessage(userLeon.userId, "Hello! My name is Leon")
 
-    forum.createNewMessage(forum.getUserId(USER_P), "Where are you from Leon?")
-    forum.createNewMessage(forum.getUserId(USER_L), "I`m from London")
+    forum.createNewMessage(userPavel.userId, "Where are you from Leon?")
+    forum.createNewMessage(userLeon.userId, "I`m from London")
 
     forum.printThread()
 }
