@@ -1,5 +1,8 @@
 package lesson_11
 
+const val USER_P = "Pavel"
+const val USER_L = "Leon"
+
 class ForumUser private constructor(
     val userId: Int,
     val userName: String,
@@ -41,18 +44,16 @@ class ForumMessage private constructor(
 }
 
 class Forum(
-    val forumMembers: MutableList<ForumUser> = mutableListOf(),
-    val forumMessages: MutableList<ForumMessage> = mutableListOf(),
+    private val forumMembers: MutableList<ForumUser> = mutableListOf(),
+    private val forumMessages: MutableList<ForumMessage> = mutableListOf(),
 ) {
-    fun createNewUser(newUserName: String) = apply {
-        this.forumMembers.add(
-            ForumUser.Builder()
-                .createUser(newUserName, forumMembers.size + 1)
-                .build()
-        )
+    fun createNewUser(newUserName: String): ForumUser {
+        return ForumUser.Builder()
+            .createUser(newUserName, forumMembers.size + 1)
+            .build()
     }
 
-    fun createNewMessage(userId: Int, newMessage: String) = apply {
+    fun createNewMessage(userId: Int?, newMessage: String) = apply {
         for (item in forumMembers) {
             if (item.userId == userId) {
                 this.forumMessages.add(
@@ -74,19 +75,32 @@ class Forum(
             }
         }
     }
+
+    fun getUserId(userName: String): Int? {
+        for (item in forumMembers) {
+            if (item.userName == userName) {
+                return item.userId
+            }
+        }
+        return null
+    }
+
+    fun addUserToForum(user: ForumUser) {
+        forumMembers.add(user)
+    }
 }
 
 fun main() {
     val forum = Forum()
 
-    forum.createNewUser("Pavel")
-    forum.createNewUser("Leon")
+    forum.addUserToForum(forum.createNewUser(USER_P))
+    forum.addUserToForum(forum.createNewUser(USER_L))
 
-    forum.createNewMessage(forum.forumMembers[0].userId, "Hello! My name is Pavel")
-    forum.createNewMessage(forum.forumMembers[1].userId, "Hello! My name is Leon")
+    forum.createNewMessage(forum.getUserId(USER_P), "Hello! My name is Pavel")
+    forum.createNewMessage(forum.getUserId(USER_L), "Hello! My name is Leon")
 
-    forum.createNewMessage(forum.forumMembers[0].userId, "Where are you from Leon?")
-    forum.createNewMessage(forum.forumMembers[1].userId, "I`m from London")
+    forum.createNewMessage(forum.getUserId(USER_P), "Where are you from Leon?")
+    forum.createNewMessage(forum.getUserId(USER_L), "I`m from London")
 
     forum.printThread()
 }
